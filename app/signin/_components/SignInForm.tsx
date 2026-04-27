@@ -12,6 +12,12 @@ import { useRouter } from "next/navigation";
 
 export default function SignInForm() {
   const [showPassword, setShowPassword] = useState(false);
+  const router = useRouter();
+
+  const handleSignIn = (e: React.FormEvent) => {
+    e.preventDefault();
+    router.push('/dashboard');
+  };
 
   return (
     <div className="w-full max-w-[420px] flex flex-col items-center lg:items-start font-poppins">
@@ -24,7 +30,7 @@ export default function SignInForm() {
         </p>
       </div>
 
-      <form className="w-full space-y-4">
+      <form onSubmit={handleSignIn} className="w-full space-y-4">
         <div className="space-y-3">
           <Label htmlFor="email" className="text-[14px] font-semibold ml-1">
             Email or Username
@@ -79,14 +85,12 @@ export default function SignInForm() {
           </Link>
         </div>
 
-        <Link href="/onboarding" className="block w-full group">
-          <Button 
-            type="button"
-            className="w-full h-[48px] bg-[#066EFF] hover:bg-[#0556cc] text-white font-bold rounded-[16px] shadow-xl shadow-blue-500/30 transition-all text-[16px] cursor-pointer"
-          >
-            Sign In
-          </Button>
-        </Link>
+        <Button 
+          type="submit"
+          className="w-full h-[48px] bg-[#066EFF] hover:bg-[#0556cc] text-white font-bold rounded-[16px] shadow-xl shadow-blue-500/30 transition-all text-[16px] cursor-pointer"
+        >
+          Sign In
+        </Button>
       </form>
 
       <div className="w-full flex items-center gap-4 my-9">
