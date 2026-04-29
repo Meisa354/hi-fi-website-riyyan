@@ -51,16 +51,16 @@ export default function Step5({
         </p>
       </div>
 
-      <div 
+      <div
         className={`w-full min-h-[200px] md:h-[250px] rounded-[24px] md:rounded-[32px] border-[1.6px] border-dashed ${file ? 'border-green-400 bg-green-50/50' : 'border-[#066EFF4D] bg-[#F0F4FF80]'} flex flex-col items-center justify-center p-6 gap-4 cursor-pointer hover:bg-[#F0F4FF] transition-all group`}
         onClick={() => fileInputRef.current?.click()}
         onDragOver={handleDragOver}
         onDrop={handleDrop}
       >
-        <input 
-          type="file" 
-          className="hidden" 
-          ref={fileInputRef} 
+        <input
+          type="file"
+          className="hidden"
+          ref={fileInputRef}
           onChange={handleFileChange}
           accept=".pdf,.jpg,.jpeg,.png"
         />
@@ -94,7 +94,7 @@ export default function Step5({
       </div>
 
       <div className="w-full text-center md:text-left mt-8">
-        <button 
+        <button
           onClick={onNext}
           className="text-[14px] font-semibold text-slate-400 hover:text-[#066EFF] transition-colors cursor-pointer"
         >
